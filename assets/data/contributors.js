@@ -40,5 +40,5 @@ export const contributorsArray = [
     gitHub: 'https://github.com/paulaFenner',
     avatar: '/assets/images/contributors/paula-avatar.jpeg',
     alt: 'Paula happily smiling at the camera with her eyes closed.'
-  },
+  }
 ];
