@@ -37,11 +37,11 @@ const contributorMap = contributorsArray.map(contributor =>
         </div>
 
     </article>`
-)
+).join('')
 
 
 function renderContributors() {
-    contributorSection.innerHTML = contributorMap.join('')
+    contributorSection.innerHTML = contributorMap
 }
 
 renderContributors()
