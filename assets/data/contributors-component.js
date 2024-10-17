@@ -6,9 +6,9 @@ import { contributorsArray } from "./contributors.js"
 
 //iterates through contributors arr and creates contributor card HTML for each adding them to an arr
 function renderContributorsHtml() {
-    let contributorsHtmlArr = []
 
-    contributorsHtmlArr = contributorsArray.map(contributor => {
+    for (let i = contributorsArray.length; i > 0; i--) {
+    const contributorsHtmlArr = contributorsArray.map(contributor => {
         const contributorAvatar = renderAvatarHtml(contributor.avatar, contributor.alt)
         const contributorGitHub = renderGitHubHtml(contributor.gitHub)
         const contributorLinkedIn = renderLinkedInHtml(contributor.linkedIn)
@@ -32,8 +32,8 @@ function renderContributorsHtml() {
                 </article>
             `
     })
-
     return contributorsHtmlArr
+}
 }
 
 function renderAvatarHtml(avatarSrc, avatarAlt) {
@@ -63,3 +63,29 @@ function renderGitHubHtml(gitHubUrl) {
         return ''
     }
 }
+
+function shuffleContributors(arr) {
+    let newIndexArr = []
+
+    if (newIndexArr.length < contributorsArray.length) {    
+    for (let i = contributorsArray.length ; i > newIndexArr.length; i) {
+
+       let j = Math.floor(Math.random() * i)
+        
+        if (newIndexArr.includes(j)) {
+            j = Math.floor( Math.random() * j )
+        } else {
+            newIndexArr.push(j)
+            
+        }
+        
+    }
+}
+    
+    // newIndexArr.push(Math.floor(Math.random() * contributorsArray.length))
+    
+    return newIndexArr
+}
+
+console.log(shuffleContributors())
+console.log(shuffleContributors().shift())
