@@ -8,7 +8,7 @@ import { contributorsArray } from "./contributors.js"
 function renderContributorsHtml() {
 
     for (let i = contributorsArray.length; i > 0; i--) {
-    const contributorsHtmlArr = contributorsArray.map(contributor => {
+        const contributorsHtmlArr = contributorsArray.map(contributor => {
         const contributorAvatar = renderAvatarHtml(contributor.avatar, contributor.alt)
         const contributorGitHub = renderGitHubHtml(contributor.gitHub)
         const contributorLinkedIn = renderLinkedInHtml(contributor.linkedIn)
@@ -31,9 +31,10 @@ function renderContributorsHtml() {
                     </span>
                 </article>
             `
-    }).sort(() => Math.random() - .5)
-    return contributorsHtmlArr
-}
+        }).sort(() => Math.random() -.5) //shuffles contributorsArray
+
+        return contributorsHtmlArr
+    }
 }
 
 function renderAvatarHtml(avatarSrc, avatarAlt) {
@@ -63,28 +64,3 @@ function renderGitHubHtml(gitHubUrl) {
         return ''
     }
 }
-
-function shuffleContributors() {
-    let newIndexArr = []
-
-    if (newIndexArr.length < contributorsArray.length) {    
-    for (let i = contributorsArray.length ; i > newIndexArr.length; i) {
-
-       let j = Math.floor(Math.random() * i)
-        
-        if (newIndexArr.includes(j)) {
-            j = Math.floor( Math.random() * j )
-        } else {
-            newIndexArr.push(j)
-            
-        }
-        
-    }
-}
-    
-    // newIndexArr.push(Math.floor(Math.random() * contributorsArray.length))
-    
-    return newIndexArr
-}
-
-console.log(shuffleContributors())
