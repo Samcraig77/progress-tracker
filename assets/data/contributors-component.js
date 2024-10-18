@@ -31,7 +31,7 @@ function renderContributorsHtml() {
                     </span>
                 </article>
             `
-    })
+    }).sort(() => Math.random() - .5)
     return contributorsHtmlArr
 }
 }
@@ -64,7 +64,7 @@ function renderGitHubHtml(gitHubUrl) {
     }
 }
 
-function shuffleContributors(arr) {
+function shuffleContributors() {
     let newIndexArr = []
 
     if (newIndexArr.length < contributorsArray.length) {    
@@ -88,4 +88,3 @@ function shuffleContributors(arr) {
 }
 
 console.log(shuffleContributors())
-console.log(shuffleContributors().shift())
